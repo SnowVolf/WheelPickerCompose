@@ -7,9 +7,11 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -40,9 +42,7 @@ class MainActivity : ComponentActivity() {
                         WheelTimePicker { snappedTime ->
                             println(snappedTime)
                         }
-                        WheelDatePicker(pickerStyle = PickerStyle.YEAR_MONTH) { snappedDate ->
-                            println(snappedDate)
-                        }
+                        CustomPicker()
                         WheelDateTimePicker { snappedDateTime ->
                             println(snappedDateTime)
                         }
@@ -73,4 +73,20 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+@Composable
+private fun CustomPicker() {
+    val wheelAppearance = WheelPickerDefaults.selectorProperties(
+        shape = RoundedCornerShape(8.dp),
+        color = Color.Black.copy(0.12f),
+        border = null
+    )
+    WheelDatePicker(
+        modifier = Modifier.fillMaxWidth(),
+        size = DpSize(320.dp, 180.dp),
+        pickerStyle = PickerStyle.YEAR_MONTH,
+        rowCount = 7,
+        selectorProperties = wheelAppearance
+    )
 }

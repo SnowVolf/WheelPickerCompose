@@ -2,7 +2,9 @@ package com.commandiron.wheel_picker_compose.core
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -150,6 +152,7 @@ internal fun DefaultWheelDatePicker(
                     return@WheelTextPicker months.find { it.value == snappedDate.monthValue }?.index
                 }
             )
+            Spacer(modifier = Modifier.width(size.width / 5))
             //Year
             years?.let { years ->
                 WheelTextPicker(
