@@ -25,6 +25,7 @@ internal fun DefaultWheelDateTimePicker(
     yearsRange: IntRange? = IntRange(1922, 2122),
     timeFormat: TimeFormat = TimeFormat.HOUR_24,
     size: DpSize = DpSize(256.dp, 128.dp),
+    pickerStyle: PickerStyle = PickerStyle.DAY_YEAR_MONTH,
     rowCount: Int = 3,
     textStyle: TextStyle = MaterialTheme.typography.titleMedium,
     textColor: Color = LocalContentColor.current,
@@ -56,6 +57,7 @@ internal fun DefaultWheelDateTimePicker(
                     height = size.height
                 ),
                 rowCount = rowCount,
+                pickerStyle = pickerStyle,
                 textStyle = textStyle,
                 textColor = textColor,
                 selectorProperties = WheelPickerDefaults.selectorProperties(

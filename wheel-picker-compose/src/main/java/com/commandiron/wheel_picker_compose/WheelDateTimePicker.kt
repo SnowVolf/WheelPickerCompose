@@ -9,6 +9,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.commandiron.wheel_picker_compose.core.DefaultWheelDateTimePicker
+import com.commandiron.wheel_picker_compose.core.PickerStyle
 import com.commandiron.wheel_picker_compose.core.SelectorProperties
 import com.commandiron.wheel_picker_compose.core.TimeFormat
 import com.commandiron.wheel_picker_compose.core.WheelPickerDefaults
@@ -24,6 +25,7 @@ fun WheelDateTimePicker(
     timeFormat: TimeFormat = TimeFormat.HOUR_24,
     size: DpSize = DpSize(256.dp, 128.dp),
     rowCount: Int = 3,
+    pickerStyle: PickerStyle = PickerStyle.DAY_YEAR_MONTH,
     textStyle: TextStyle = MaterialTheme.typography.titleMedium,
     textColor: Color = LocalContentColor.current,
     selectorProperties: SelectorProperties = WheelPickerDefaults.selectorProperties(),
@@ -37,6 +39,7 @@ fun WheelDateTimePicker(
         yearsRange,
         timeFormat,
         size,
+        pickerStyle,
         rowCount,
         textStyle,
         textColor,

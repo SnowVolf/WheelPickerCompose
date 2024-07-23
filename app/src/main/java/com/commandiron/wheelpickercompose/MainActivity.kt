@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import com.commandiron.wheel_picker_compose.WheelDatePicker
 import com.commandiron.wheel_picker_compose.WheelDateTimePicker
 import com.commandiron.wheel_picker_compose.WheelTimePicker
+import com.commandiron.wheel_picker_compose.core.PickerStyle
 import com.commandiron.wheel_picker_compose.core.TimeFormat
 import com.commandiron.wheel_picker_compose.core.WheelPickerDefaults
 import com.commandiron.wheelpickercompose.ui.theme.WheelPickerComposeTheme
@@ -39,7 +40,7 @@ class MainActivity : ComponentActivity() {
                         WheelTimePicker { snappedTime ->
                             println(snappedTime)
                         }
-                        WheelDatePicker { snappedDate ->
+                        WheelDatePicker(pickerStyle = PickerStyle.YEAR_MONTH) { snappedDate ->
                             println(snappedDate)
                         }
                         WheelDateTimePicker { snappedDateTime ->

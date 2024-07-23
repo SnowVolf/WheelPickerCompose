@@ -9,6 +9,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import com.commandiron.wheel_picker_compose.core.DefaultWheelDatePicker
+import com.commandiron.wheel_picker_compose.core.PickerStyle
 import com.commandiron.wheel_picker_compose.core.SelectorProperties
 import com.commandiron.wheel_picker_compose.core.WheelPickerDefaults
 import java.time.LocalDate
@@ -21,6 +22,7 @@ fun WheelDatePicker(
     maxDate: LocalDate = LocalDate.MAX,
     yearsRange: IntRange? = IntRange(1922, 2122),
     size: DpSize = DpSize(256.dp, 128.dp),
+    pickerStyle: PickerStyle = PickerStyle.DAY_YEAR_MONTH,
     rowCount: Int = 3,
     textStyle: TextStyle = MaterialTheme.typography.titleMedium,
     textColor: Color = LocalContentColor.current,
@@ -34,6 +36,7 @@ fun WheelDatePicker(
         maxDate,
         yearsRange,
         size,
+        pickerStyle,
         rowCount,
         textStyle,
         textColor,
